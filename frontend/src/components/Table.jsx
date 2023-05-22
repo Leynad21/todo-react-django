@@ -88,24 +88,25 @@ const Table = ({ todos, isLoading, setTodos }) => {
                   <span><label htmlFor="my-modal" ><MdEditNote onClick={() => setEditText(todoItem)} className=' text-xl cursor-pointer' /></label></span>
                   <span className=' text-xl cursor-pointer'><MdOutlineDeleteOutline onClick={() => handleDelete(todoItem.id)} /></span>
 
-                  <input type="checkbox" id="my-modal" className="modal-toggle" />
-                  <div className="modal">
-                    <div className="modal-box">
-                      <h3 className="font-bold text-lg">Edit Todo</h3>
-                      <input type="text" value={editText.body} onChange={handleChange} placeholder="Type here" className="input input-bordered w-full mt-8" />
-                      <div className="modal-action">
-                        <label htmlFor="my-modal" onClick={handleClick} className="btn btn-primary">Edit</label>
-                        <label htmlFor="my-modal" className="btn">Close</label>
-                      </div>
-                    </div>
-                  </div>
                 </td>
               </tr>
             )
             )}</>}
-
         </tbody>
       </table>
+
+      {/* Modal */}
+      <input type="checkbox" id="my-modal" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Edit Todo</h3>
+          <input type="text" value={editText.body} onChange={handleChange} placeholder="Type here" className="input input-bordered w-full mt-8" />
+          <div className="modal-action">
+            <label htmlFor="my-modal" onClick={handleClick} className="btn btn-primary">Edit</label>
+            <label htmlFor="my-modal" className="btn">Close</label>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
