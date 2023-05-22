@@ -13,8 +13,6 @@ function App() {
 
   useEffect(() => {
     fetchData()
-    console.log(todos);
-    setTodos
   }, [])
 
   const fetchData = async () => {
