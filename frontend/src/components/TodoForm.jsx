@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import TodoContext from '../context/TodoContext'
 
 
-const TodoForm = ({ setTodos, fetchData }) => {
+const TodoForm = ({ fetchData }) => {
+
+    const { setTodos } = useContext(TodoContext)
 
     const [newTodo, setNewTodo] = useState({
         'body': ''

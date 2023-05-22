@@ -1,9 +1,12 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { MdOutlineDeleteOutline, MdEditNote, MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from 'react-icons/md'
+import TodoContext from '../context/TodoContext'
 
 
-const Table = ({ todos, isLoading, setTodos }) => {
+const Table = () => {
+
+  const { todos, setTodos, isLoading } = useContext(TodoContext)
 
   const [editText, setEditText] = useState({
     'body': ''

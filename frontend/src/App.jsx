@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import './App.css'
 import Table from './components/Table'
 import TodoForm from './components/TodoForm'
 import axios from 'axios'
+import TodoContext from './context/TodoContext'
+
 
 
 function App() {
 
-  const [todos, setTodos] = useState("")
-  const [isLoading, setisLoading] = useState(true)
+
+  const { setTodos, setisLoading } = useContext(TodoContext)
 
 
   useEffect(() => {
@@ -34,14 +36,9 @@ function App() {
       </nav>
       {/* Body */}
       <TodoForm
-        setTodos={setTodos}
         fetchData={fetchData}
       />
-      <Table
-        todos={todos}
-        isLoading={isLoading}
-        setTodos={setTodos} />
-
+      <Table />
     </div>
   )
 }
